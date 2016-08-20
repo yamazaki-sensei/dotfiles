@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
+	"detect_identation": true,
+	"ignored_packages":
+	[
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true
+}

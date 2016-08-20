@@ -1,0 +1,932 @@
+{
+	"folder_history":
+	[
+		"/Users/hira/Documents/SkyDrive/Rails/first_app",
+		"/Users/hira/SkyDrive/Rails/first_app"
+	],
+	"last_version": 3059,
+	"last_window_id": 15,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 666.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"s",
+						"SharedSupport"
+					]
+				]
+			},
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 107.0,
+				"selected_items":
+				[
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						":w",
+						":w - Save"
+					]
+				],
+				"width": 467.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/Users/hira/SkyDrive/Rails/first_app/Gemfile",
+				"/Users/hira/.gemrc",
+				"/Users/hira/.bashrc",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/Default/Default ().sublime-keymap"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 31.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"output.vi_out":
+			{
+				"height": 100.0
+			},
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 392.0,
+				"selected_items":
+				[
+					[
+						"",
+						"ApplicationHelper"
+					]
+				],
+				"width": 392.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 201.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1176.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"s",
+						"SharedSupport"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/help.html.erb",
+					"settings":
+					{
+						"buffer_size": 266,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/home.html.erb",
+					"settings":
+					{
+						"buffer_size": 101,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "Package Control Messages\n========================\n\nVintageous:\n----------\n\n  ==============================================================================\n  Vintageous 3.6.2\n  ==============================================================================\n  \n  *** Follow important announcements on Twitter: @VintageousS3 ***\n  \n  \n  CHANGES\n  -------\n  \n    - Tweak handling of mouse-driven selections.\n  \n  \n  FOUND BUGS?\n  -----------\n  \n  Please report them here:\n  \n      https://github.com/guillermooo/Vintageous/issues\n  \n  \n  SUPPORT VINTAGEOUS\n  ------------------\n  \n  Is Vintageous worth your time? Developing Vintageous is hard work. If you use\n  it often to get actual work done, please consider donating and make it worth\n  my time too.\n  \n      PayPal: http://www.pledgie.com/campaigns/19122\n      Gittip: https://www.gittip.com/guillermooo/\n  \n  I'm the creator and main author of Vintageous, but some generous people have\n  contributed their time and effort as well. See the more active ones here; you\n  may want to show them some gratitude too:\n  \n  https://github.com/guillermooo/Vintageous/graphs/contributors\n  \n  Thanks for reading and for using Vintageous!\n  \n\n  ==============================================================================\n  Vintageous 3.6.1\n  ==============================================================================\n  \n  *** Follow important announcements on Twitter: @VintageousS3 ***\n  \n  \n  CHANGES\n  -------\n  \n    - Double-clicking selects word.\n  \n  \n  FOUND BUGS?\n  -----------\n  \n  Please report them here:\n  \n      https://github.com/guillermooo/Vintageous/issues\n  \n  \n  SUPPORT VINTAGEOUS\n  ------------------\n  \n  Is Vintageous worth your time? Developing Vintageous is hard work. If you use\n  it often to get actual work done, please consider donating and make it worth\n  my time too.\n  \n      PayPal: http://www.pledgie.com/campaigns/19122\n      Gittip: https://www.gittip.com/guillermooo/\n  \n  I'm the creator and main author of Vintageous, but some generous people have\n  contributed their time and effort as well. See the more active ones here; you\n  may want to show them some gratitude too:\n  \n  https://github.com/guillermooo/Vintageous/graphs/contributors\n  \n  Thanks for reading and for using Vintageous!\n  \n\n  ==============================================================================\n  Vintageous 3.6.0\n  ==============================================================================\n  \n  *** Follow important announcements on Twitter: @VintageousS3 ***\n  \n  \n  CHANGES\n  -------\n  \n    - Reload settings after resetting state via command palette.\n    - Add command palette command to open/create .vintageousrc.\n    - Improve handling of mouse-driven selections.\n  \n  \n  FOUND BUGS?\n  -----------\n  \n  Please report them here:\n  \n      https://github.com/guillermooo/Vintageous/issues\n  \n  \n  SUPPORT VINTAGEOUS\n  ------------------\n  \n  Is Vintageous worth your time? Developing Vintageous is hard work. If you use\n  it often to get actual work done, please consider donating and make it worth\n  my time too.\n  \n      PayPal: http://www.pledgie.com/campaigns/19122\n      Gittip: https://www.gittip.com/guillermooo/\n  \n  I'm the creator and main author of Vintageous, but some generous people have\n  contributed their time and effort as well. See the more active ones here; you\n  may want to show them some gratitude too:\n  \n  https://github.com/guillermooo/Vintageous/graphs/contributors\n  \n  Thanks for reading and for using Vintageous!\n  \n\n  ==============================================================================\n  Vintageous 3.5.14\n  ==============================================================================\n  \n  *** Follow important announcements on Twitter: @VintageousS3 ***\n  \n  \n  CHANGES\n  -------\n  \n    - Improve * and # operators.\n    - Enable counts for 'a' operator.\n    - Add non-standard 'gcc' operator to comment current line.\n    - Add non-standard command to enter distraction free mode (<S-f11>).\n    - Restore abitlity of 'c' operator to yank to registers.\n  \n  \n  FOUND BUGS?\n  -----------\n  \n  Please report them here:\n  \n      https://github.com/guillermooo/Vintageous/issues\n  \n  \n  SUPPORT VINTAGEOUS\n  ------------------\n  \n  Is Vintageous worth your time? Developing Vintageous is hard work. If you use\n  it often to get actual work done, please consider donating and make it worth\n  my time too.\n  \n      PayPal: http://www.pledgie.com/campaigns/19122\n      Gittip: https://www.gittip.com/guillermooo/\n  \n  I'm the creator and main author of Vintageous, but some generous people have\n  contributed their time and effort as well. See the more active ones here; you\n  may want to show them some gratitude too:\n  \n  https://github.com/guillermooo/Vintageous/graphs/contributors\n  \n  Thanks for reading and for using Vintageous!\n  \n\n  ==============================================================================\n  Vintageous 3.5.13\n  ==============================================================================\n  \n  *** Follow important announcements on Twitter: @VintageousS3 ***\n  \n  \n  CHANGES\n  -------\n  \n    - Fix tag text object when starting from before nested tag in outer tag.\n    - Fixes to operators t, f, T, F.\n    - Fix big E to work correctly with 'c' and 'd' and visual mode.\n    - Fix kill command in build.sh to work on OSX.\n    - Fix percent % brackets matching in visual mode\n    - Fix letter-case-related commands.\n  \n  \n  FOUND BUGS?\n  -----------\n  \n  Please report them here:\n  \n      https://github.com/guillermooo/Vintageous/issues\n  \n  \n  SUPPORT VINTAGEOUS\n  ------------------\n  \n  Is Vintageous worth your time? Developing Vintageous is hard work. If you use\n  it often to get actual work done, please consider donating and make it worth\n  my time too.\n  \n      PayPal: http://www.pledgie.com/campaigns/19122\n      Gittip: https://www.gittip.com/guillermooo/\n  \n  I'm the creator and main author of Vintageous, but some generous people have\n  contributed their time and effort as well. See the more active ones here; you\n  may want to show them some gratitude too:\n  \n  https://github.com/guillermooo/Vintageous/graphs/contributors\n  \n  Thanks for reading and for using Vintageous!\n  \n",
+					"settings":
+					{
+						"buffer_size": 6235,
+						"line_ending": "Unix",
+						"name": "Package Control Messages",
+						"scratch": true
+					}
+				},
+				{
+					"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/about.html.erb",
+					"settings":
+					{
+						"buffer_size": 275,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 345,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/spec/requests/static_pages_spec.rb",
+					"settings":
+					{
+						"buffer_size": 1173,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 107.0,
+				"selected_items":
+				[
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						":w",
+						":w - Save"
+					]
+				],
+				"width": 467.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/spec/requests/static_pages_spec.rb",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/config/routes.rb",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/app/controllers/static_pages_controller.rb",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/about.html.erb",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/spec/spec_helper.rb",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/Gemfile",
+				"/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/home.html.erb",
+				"/Users/hira/Documents/SkyDrive/.settings/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+				"/Users/hira/Documents/SkyDrive/.settings/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+				"/Applications/Sublime Text.app/Contents/MacOS/spec_helper.rb",
+				"/Users/hira/SkyDrive/Rails/first_app/Gemfile",
+				"/Users/hira/.gemrc",
+				"/Users/hira/.bashrc",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+				"/Users/hira/Library/Application Support/Sublime Text 3/Packages/Default/Default ().sublime-keymap"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"follow_symlinks": true,
+					"path": "/Users/hira/Documents/SkyDrive/Rails/first_app"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 2,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/help.html.erb",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 266,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										27,
+										27
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"normal_insert_count": "1",
+										"partial_sequence": "",
+										"register": "\"",
+										"repeat_data":
+										[
+											"native",
+											[
+												"insert",
+												{
+													"characters": "	"
+												}
+											],
+											"mode_insert",
+											null
+										],
+										"sequence": "",
+										"xpos": 28
+									}
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/home.html.erb",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 101,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										46,
+										46
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"_vintageous_gluing_sequence": false,
+										"_vintageous_non_interactive": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"normal_insert_count": "1",
+										"partial_sequence": "",
+										"register": "\"",
+										"repeat_data":
+										[
+											"vi",
+											"=",
+											"mode_normal",
+											[
+												4,
+												0,
+												"mode_visual_line"
+											]
+										],
+										"sequence": "",
+										"xpos": 0
+									}
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 6235,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										6235,
+										6235
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"_vintageous_gluing_sequence": false,
+										"_vintageous_non_interactive": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"partial_sequence": "",
+										"register": "\"",
+										"sequence": ""
+									},
+									"word_wrap": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/static_pages/about.html.erb",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 275,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										145,
+										145
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"normal_insert_count": "1",
+										"partial_sequence": "",
+										"register": "\"",
+										"repeat_data":
+										[
+											"native",
+											[
+												"sequence",
+												{
+													"commands":
+													[
+														[
+															"_vi_a",
+															{
+																"count": 1,
+																"mode": "mode_internal_normal"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": "yield"
+															}
+														],
+														[
+															"insert_snippet",
+															{
+																"contents": "($0)"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": ":title"
+															}
+														],
+														[
+															"move",
+															{
+																"by": "characters",
+																"forward": true
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " %>"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " <"
+															}
+														],
+														[
+															"close_tag",
+															{
+																"insert_slash": true
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": "til"
+															}
+														],
+														[
+															"left_delete",
+															null
+														],
+														[
+															"left_delete",
+															null
+														],
+														[
+															"left_delete",
+															null
+														]
+													]
+												}
+											],
+											"mode_insert",
+											null
+										],
+										"sequence": "",
+										"xpos": 78
+									}
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/app/views/layouts/application.html.erb",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 345,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										92,
+										92
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"normal_insert_count": "1",
+										"partial_sequence": "",
+										"register": "\"",
+										"repeat_data":
+										[
+											"native",
+											[
+												"sequence",
+												{
+													"commands":
+													[
+														[
+															"insert",
+															{
+																"characters": "T"
+															}
+														],
+														[
+															"left_delete",
+															null
+														],
+														[
+															"insert",
+															{
+																"characters": "Ruby"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " on"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " Rails"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " Tutorial"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " Sample"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " App"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " |"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " <"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": "%="
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": "yield"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": "(:title)"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " %>"
+															}
+														]
+													]
+												}
+											],
+											"mode_insert",
+											null
+										],
+										"sequence": "",
+										"xpos": 63
+									}
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/Users/hira/Documents/SkyDrive/Rails/first_app/spec/requests/static_pages_spec.rb",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1173,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1173,
+										1173
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Ruby/Ruby.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true,
+									"vintage":
+									{
+										"_vintageous_glue_until_normal_mode": false,
+										"action": null,
+										"action_count": "",
+										"capture_register": false,
+										"mode": "mode_normal",
+										"motion": null,
+										"motion_count": "",
+										"normal_insert_count": "1",
+										"partial_sequence": "",
+										"register": "\"",
+										"repeat_data":
+										[
+											"native",
+											[
+												"sequence",
+												{
+													"commands":
+													[
+														[
+															"insert",
+															{
+																"characters": "Aou"
+															}
+														],
+														[
+															"left_delete",
+															null
+														],
+														[
+															"left_delete",
+															null
+														],
+														[
+															"insert",
+															{
+																"characters": "bout"
+															}
+														],
+														[
+															"insert",
+															{
+																"characters": " Us"
+															}
+														]
+													]
+												}
+											],
+											"mode_insert",
+											null
+										],
+										"sequence": "",
+										"xpos": 0
+									}
+								},
+								"translation.x": 0.0,
+								"translation.y": 44.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 5,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 31.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"output.vi_out":
+			{
+				"height": 100.0
+			},
+			"position": "264 273 1176 605 0 0 1440 878 ",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 392.0,
+				"selected_items":
+				[
+					[
+						"",
+						"ApplicationHelper"
+					]
+				],
+				"width": 392.0
+			},
+			"settings":
+			{
+				"_vintageous_last_buffer_search": "html",
+				"_vintageous_reset_during_init": true,
+				"vintage":
+				{
+					"_cmdline_cd": "/Users/hira/Documents/SkyDrive/.settings/Sublime Text 3/Packages"
+				}
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 218.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 15,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

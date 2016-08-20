@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Volumes/Amazon Cloud Player/Amazon Cloud Player Installer.app'
+let g:netrw_dirhist_2='/Users/hira/SkyDrive/atok_std'
+let g:netrw_dirhist_3='/Users/hira/SkyDrive/Arduino/src/BLE01/src/BLEFirmataSketch'
+let g:netrw_dirhist_4='/Users/hira/.virtualenvs'
+let g:netrw_dirhist_5='/usr/local/etc/bash_completion.d'
