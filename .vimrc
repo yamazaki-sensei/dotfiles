@@ -35,24 +35,6 @@ function ClosePair(char)
 	 endif
 endf
 
-"Start NeoBundle"
-set nocompatible
-filetype off
-
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-	call neobundle#rc(expand('~/.vim/bundle'))
-endif
-
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-
-filetype plugin on
-filetype indent on
-"End NeoBundle"
-
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 let g:neocomplcache_enable_at_startup = 1
 
