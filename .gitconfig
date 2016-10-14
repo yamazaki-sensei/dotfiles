@@ -1,25 +1,36 @@
-[user]
-	name = Hiraku Ohno
-	email = almichest.free@gmail.com
 [core]
 	excludesfile = /Users/hira/.gitignore_global
-	editor = vim
+	editor = /usr/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[merge "mergepbx"]
+	name = Xcode project files merger
+	driver = mergepbx %O %A %B
+[user]
+	name = Hiraku Ohno
+	email = hiraku.ohno@glucose.jp
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[alias]
+	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
+	co = !git checkout
+	cm = !git commit
+	d  = !git diff
+	s  = !git status
+	l  = !git log
+    br = !git branch
+    pr = "!git p; hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
+         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
+    prn = "!hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
+         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
+    del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
+    addw = !"git diff -w --no-color | git apply --cached"
 
 [fetch]
-    prune = true
-
-[alias]
-	gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-	s = status
-	cm = commit
-	co = checkout
-    p = !git push origin `git rev-parse --abbrev-ref HEAD`
-    l = log
-    br = branch
-
+	prune = true
