@@ -19,12 +19,12 @@
 	required = true
 [alias]
 	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
-	co = !git checkout
-	cm = !git commit
-	d  = !git diff
-	s  = !git status
-	l  = !git log
-    br = !git branch
+	co = checkout
+	cm = commit
+	d  = diff
+	s  = status
+	l  = log
+    br = branch
     pr = "!git p; hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
          HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
     prn = "!hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
