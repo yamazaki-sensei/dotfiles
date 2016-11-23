@@ -18,6 +18,7 @@
 	smudge = git lfs smudge %f
 	required = true
 [alias]
+    usub = !git submodule foreach git pull origin master
 	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
 	co = !git checkout
 	cm = !git commit
