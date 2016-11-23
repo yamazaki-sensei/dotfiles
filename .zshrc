@@ -54,6 +54,8 @@ export PATH="/usr/local/bin:/Users/hira/.rbenv/shims:/Users/hira/.rbenv/bin:/usr
 
 source $ZSH/oh-my-zsh.sh
 export PATH=~/Documents/git/infer/infer/infer/bin:$PATH
+export PATH=~/Documents/flutter/flutter//bin:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -282,6 +284,7 @@ fi
 
 
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fpath=($(brew --prefix)/share/zsh/zsh-completions $fpath)
 
 autoload -U compinit
 compinit -u
@@ -292,3 +295,10 @@ eval "$(rbenv init -)"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+function git-root() {
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+        cd `pwd`/`git rev-parse --show-cdup`
+    fi
+}
