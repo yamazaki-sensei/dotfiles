@@ -54,8 +54,6 @@ export PATH="/usr/local/bin:/Users/hira/.rbenv/shims:/Users/hira/.rbenv/bin:/usr
 
 source $ZSH/oh-my-zsh.sh
 export PATH=~/Documents/git/infer/infer/infer/bin:$PATH
-export PATH=~/Documents/flutter/flutter//bin:$PATH
-export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -211,6 +209,9 @@ alias cp='cp -i'
 alias mv='mv -i'
  
 alias mkdir='mkdir -p'
+
+alias g='git'
+alias be='bundle exec'
  
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -276,6 +277,9 @@ bindkey '^r' peco-select-history
 
 path=(/opt/local/bin ${path})
 path=(~/Documents/git/woff2 ${path})
+path=(~/Library/Android/sdk/platform-tools ${path})
+path=(~/Documents/git/flutter/bin ${path})
+
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
@@ -284,7 +288,6 @@ fi
 
 
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-fpath=($(brew --prefix)/share/zsh/zsh-completions $fpath)
 
 autoload -U compinit
 compinit -u
@@ -293,12 +296,7 @@ alias objc2swift='java -jar ~/Documents/git/objc2swift/build/libs/objc2swift-1.0
 
 eval "$(rbenv init -)"
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export LESS='-g -i -M -R -S -W -z-4 -x4'
 
-function git-root() {
-    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-        cd `pwd`/`git rev-parse --show-cdup`
-    fi
-}
