@@ -18,7 +18,6 @@
 	smudge = git lfs smudge %f
 	required = true
 [alias]
-    usub = !git submodule foreach git pull origin master
 	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
 	co = !git checkout
 	cm = !git commit
@@ -26,10 +25,9 @@
 	s  = !git status
 	l  = !git log
     br = !git branch
-    pr = "!git p; hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
-         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
+    pr = "!git p; git prn"
     prn = "!hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
-         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
+         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A%23Test%20%0A%0A"
     del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
     addw = !"git diff -w --no-color | git apply --cached"
 
