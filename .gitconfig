@@ -27,7 +27,7 @@
     br = !git branch
     pr = "!git p; git prn"
     prn = "!hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
-         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A%23Test%20%0A%0A"
+         HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A%23%20Test%20%0A%0A"
     del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
     addw = !"git diff -w --no-color | git apply --cached"
 
