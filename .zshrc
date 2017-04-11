@@ -300,3 +300,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
+export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
