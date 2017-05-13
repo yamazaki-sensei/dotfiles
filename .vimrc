@@ -36,5 +36,10 @@ function ClosePair(char)
 endf
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
 let g:neocomplcache_enable_at_startup = 1
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+inoremap <Esc> <Esc>
 
