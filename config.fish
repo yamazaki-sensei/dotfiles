@@ -8,3 +8,5 @@ function fish_prompt
     _old_fish_prompt
 end
 
+alias rm='rm -i'
+
