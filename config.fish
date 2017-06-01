@@ -10,3 +10,4 @@ end
 
 alias rm='rm -i'
 
+alias refresh='eval $SHELL'
