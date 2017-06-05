@@ -9,5 +9,5 @@ function fish_prompt
 end
 
 alias rm='rm -i'
+alias be='bundle exec'
 
-alias refresh='eval $SHELL'
