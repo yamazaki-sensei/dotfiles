@@ -8,5 +8,5 @@ ln -s ~/.vim .vim
 ln -s ~/.vimrc .vimrc
 ln -s ~/.xvimrc .xvimrc
 ln -s ~/.zshrc .zshrc
-ln -s ~/.config/fish/config.fish config.fish
+ln -s ~/.config/fish fish
 
