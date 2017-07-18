@@ -2,7 +2,7 @@ syntax on
 set nobackup
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
+"set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
 set autoindent
 set smartindent
 set number

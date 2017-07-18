@@ -1,2 +1,5 @@
 set visualbell
 set noerrorbells
+set tabstop 2
+set ignorecase
+set smartcase
