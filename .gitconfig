@@ -31,6 +31,7 @@
     del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
     addw = !"git diff -w --no-color | git apply --cached"
     rb = rebase
+    ptm = "!git push origin HEAD:master"
 
 [fetch]
 	prune = true
