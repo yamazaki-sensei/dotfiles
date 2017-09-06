@@ -24,13 +24,14 @@
 	d  = diff
 	s  = status
 	l  = log
-    br = branch
-    pr = "!git p; git prn"
-    prn = "!hub browse -- compare/master"
-    del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -D; };f"
-    addw = !"git diff -w --no-color | git apply --cached"
-    rb = rebase
-    ptm = "!git push origin HEAD:master"
+  br = branch
+  pr = "!git p; git prn"
+  prn = "!hub browse -- compare/master"
+  del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -D; };f"
+  addw = !"git diff -w --no-color | git apply --cached"
+  rb = rebase
+  ptm = "!git push origin HEAD:master"
+  f = fetch
 
 [fetch]
 	prune = true

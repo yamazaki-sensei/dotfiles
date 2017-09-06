@@ -12,8 +12,8 @@ set showmatch
 set showmode
 set title
 set ruler
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set hlsearch
 set noswapfile
 set visualbell t_vb=
