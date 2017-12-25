@@ -10,4 +10,4 @@ end
 
 alias rm='rm -i'
 alias be='bundle exec'
-
+alias refresh_db='be rails db:drop; be rails db:create; be rails db:apply; be rails db:seed'
