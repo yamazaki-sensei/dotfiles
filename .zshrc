@@ -54,6 +54,7 @@ export PATH="/usr/local/bin:/Users/hira/.rbenv/shims:/Users/hira/.rbenv/bin:/usr
 
 source $ZSH/oh-my-zsh.sh
 export PATH=~/Documents/git/infer/infer/infer/bin:$PATH
+export PATH=$HOME/.node_brew/current/bin:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -301,3 +302,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
