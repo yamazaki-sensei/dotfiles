@@ -1,0 +1,1 @@
+/Users/hira/.config/fisherman/rbenv/completions/rbenv.fish

@@ -1,0 +1,1 @@
+/Users/hira/.config/fisherman/get/functions/get.fish

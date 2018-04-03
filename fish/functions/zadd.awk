@@ -1,0 +1,1 @@
+/Users/hira/.config/fisherman/z/functions/zadd.awk
