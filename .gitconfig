@@ -14,9 +14,10 @@
 	name = Hiraku Ohno
 	email = hiraku.ohno@integrity-healthcare.co.jp
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [alias]
 	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
 	co = checkout

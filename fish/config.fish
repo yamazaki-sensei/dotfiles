@@ -1,26 +1,13 @@
-eval (python -m virtualfish)
-
 # alias
 alias rm='rm -i'
 alias be='bundle exec'
 alias refresh_db='be rails db:drop; be rails db:create; be rails db:apply; be rails db:seed'
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
+alias g='git'
 
 # PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
 set PATH $HOME/Library/Android/sdk/platform-tools $PATH
-
-set -x PATH $HOME/.pyenv/bin $PATH
-. (pyenv init - | psub)
-
-# functions
-functions -c fish_prompt _old_fish_prompt
-function fish_prompt
-    if set -q VIRTUAL_ENV
-        echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
-    end
-    _old_fish_prompt
-end
 
 function cd
     if test (count $argv) -eq 0
@@ -62,4 +49,3 @@ end
 function fish_user_key_bindings
   bind \cr peco_select_history
 end
-
