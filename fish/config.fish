@@ -9,6 +9,8 @@ alias g='git'
 set PATH $HOME/.nodebrew/current/bin $PATH
 set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 
+status --is-interactive; and source (rbenv init -|psub)
+
 function cd
     if test (count $argv) -eq 0
         builtin cd
@@ -49,3 +51,4 @@ end
 function fish_user_key_bindings
   bind \cr peco_select_history
 end
+
