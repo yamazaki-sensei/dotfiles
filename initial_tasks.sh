@@ -6,9 +6,12 @@ brew install git
 brew install hub
 brew install rbenv
 brew install nodebrew
+brew install peco
 nodebrew install-binary latest
+curl -L http://get.oh-my.fish | fish
+omf install peco
 
-#npm install -g npmbrew
+npm install -g npmbrew
 
 #sudo pip install virtualenv
 #sudo pip install virtualenvwrapper
