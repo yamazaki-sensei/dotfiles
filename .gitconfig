@@ -5,14 +5,14 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [merge "mergepbx"]
 	name = Xcode project files merger
 	driver = mergepbx %O %A %B
 [user]
 	name = Hiraku Ohno
-	email = hiraku.ohno@integrity-healthcare.co.jp
+	email = ohno@toreta.in
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -37,3 +37,5 @@
 
 [fetch]
 	prune = true
+[commit]
+	template = /Users/hira/.stCommitMsg
