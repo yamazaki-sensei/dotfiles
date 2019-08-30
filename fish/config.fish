@@ -7,6 +7,7 @@ alias g='git'
 alias cart='mint run Carthage carthage bootstrap --use-ssh --use-binaries --platform iOS --cache-builds'
 alias cartup='mint run Carthage carthage update --use-ssh --use-binaries --platform iOS --cache-builds'
 alias clearcache='rm -fr ~/Library/Developer/Xcode/DerivedData/*'
+alias killapps='launchctl reboot aps'
 
 # PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
@@ -15,6 +16,10 @@ set PATH $HOME/go/bin $PATH
 
 set -U fish_prompt_pwd_dir_length 0
 status --is-interactive; and source (rbenv init -|psub)
+
+set -gx PKG_CONFIG_PATH "/usr/local/opt/libxml2/lib/pkgconfig"
+
+source ~/.cargo/env
 
 function cd
     if test (count $argv) -eq 0

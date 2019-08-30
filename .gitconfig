@@ -37,5 +37,5 @@
 
 [fetch]
 	prune = true
-[commit]
-	template = /Users/hira/.stCommitMsg
+[credential]
+	helper = osxkeychain
