@@ -8,6 +8,7 @@ alias cart='mint run Carthage carthage bootstrap --use-ssh --use-binaries --plat
 alias cart_nob='mint run Carthage carthage bootstrap --use-ssh --platform iOS --cache-builds'
 alias cartup='mint run Carthage carthage update --use-ssh --use-binaries --platform iOS --cache-builds'
 alias clearcache='rm -fr ~/Library/Developer/Xcode/DerivedData/*; rm -fr ~/Library/Caches/org.carthage.CarthageKit/; rm -fr ~/Library/Caches/carthage/'
+alias killapps='launchctl reboot aps'
 
 # PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
@@ -18,6 +19,10 @@ set JAVA_HOME /Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home
 
 set -U fish_prompt_pwd_dir_length 0
 status --is-interactive; and source (rbenv init -|psub)
+
+set -gx PKG_CONFIG_PATH "/usr/local/opt/libxml2/lib/pkgconfig"
+
+source ~/.cargo/env
 
 function cd
     if test (count $argv) -eq 0
