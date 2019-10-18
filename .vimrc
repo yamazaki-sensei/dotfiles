@@ -19,6 +19,7 @@ set noswapfile
 set visualbell t_vb=
 set history=200
 set expandtab
+set mouse=a
 
 inoremap ( ()<ESC>i
 inoremap <expr> ) ClosePair(')')

@@ -30,10 +30,7 @@
   f = fetch
   pr = "!git p; git prn"
   prn = "!hub browse -- compare/master"
-  del = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -D; };f"
-  addw = !"git diff -w --no-color | git apply --cached"
-  ptm = "!git push origin HEAD:master"
-  master  = "!git fetch; git co origin/master"
+  del = "!git br | grep -v \"\\*\" | xargs git br -D"
 
 [fetch]
 	prune = true
