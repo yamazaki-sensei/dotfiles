@@ -1,18 +1,20 @@
 [core]
 	excludesfile = /Users/hira/.gitignore_global
 	editor = /usr/bin/vim
+[advice]
+  detachedHead = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [merge "mergepbx"]
 	name = Xcode project files merger
 	driver = mergepbx %O %A %B
 [user]
-	name = Hiraku Ohno
-	email = ohno@toreta.in
+	name = hira
+	email = ohno@thelooper.jp
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -36,3 +38,5 @@
 	prune = true
 [credential]
 	helper = osxkeychain
+[commit]
+	template = /Users/hira/.stCommitMsg
