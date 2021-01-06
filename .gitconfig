@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/hira/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/vim
 [advice]
   detachedHead = false
@@ -38,5 +38,3 @@
 	prune = true
 [credential]
 	helper = osxkeychain
-[commit]
-	template = /Users/hira/.stCommitMsg

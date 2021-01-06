@@ -1,4 +1,4 @@
-#sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew update
 brew install fish
@@ -11,12 +11,12 @@ nodebrew install-binary latest
 curl -L http://get.oh-my.fish | fish
 omf install peco
 
-npm install -g npmbrew
-
-#sudo pip install virtualenv
-#sudo pip install virtualenvwrapper
-#sudo pip install virtualfish
-
 sudo echo '/usr/local/bin/fish' >> /etc/shells
 chsh -s /usr/local/bin/fish
+
+npm install -g npmbrew
+npm install -g avn avn-nvm avn-n
+npm install -g avn-nodebrew
+avn setup
+
 
