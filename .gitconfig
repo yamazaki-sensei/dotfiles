@@ -3,15 +3,6 @@
 	editor = /usr/bin/vim
 [advice]
   detachedHead = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[merge "mergepbx"]
-	name = Xcode project files merger
-	driver = mergepbx %O %A %B
 [user]
 	name = hira
 	email = ohno@thelooper.jp
@@ -30,8 +21,9 @@
   br = branch
   rb = rebase
   f = fetch
-  pr = "!git p; git prn"
-  prn = "!hub browse -- compare/master"
+  sw = switch
+  pr = "!git p; sh ~/create_git_pr.sh"
+  prn = "!sh ~/create_git_pr.sh"
   del = "!git br | grep -v \"\\*\" | xargs git br -D"
 
 [fetch]
