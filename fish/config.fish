@@ -4,11 +4,13 @@ alias be='bundle exec'
 alias refresh_db='be rails db:drop; be rails db:create; be rails db:apply; be rails db:seed'
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 alias g='git'
-alias cart='mint run Carthage carthage bootstrap --use-ssh --use-binaries --platform iOS --cache-builds'
-alias cart_nob='mint run Carthage carthage bootstrap --use-ssh --platform iOS --cache-builds'
-alias cartup='mint run Carthage carthage update --use-ssh --use-binaries --platform iOS --cache-builds'
 alias clearcache='rm -fr ~/Library/Developer/Xcode/DerivedData/*; rm -fr ~/Library/Caches/org.carthage.CarthageKit/; rm -fr ~/Library/Caches/carthage/'
 alias killapps='launchctl reboot aps'
+alias dcm='docker compose'
+
+function into
+  docker compose exec $argv[1] sh
+end
 
 # PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
