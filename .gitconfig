@@ -25,6 +25,7 @@
   pr = "!git p; sh ~/create_git_pr.sh"
   prn = "!sh ~/create_git_pr.sh"
   del = "!git br | grep -v \"\\*\" | xargs git br -D"
+  rebase = "rebase --autostash"
 
 [fetch]
 	prune = true
