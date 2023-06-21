@@ -14,4 +14,5 @@ rm -f ~/.vimrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 rm -f ~/.xvimrc
 ln -s ~/dotfiles/.xvimrc ~/.xvimrc
-
+rm -f ~/create_git_pr.sh
+ln -s ~/dotfiles/create_git_pr.sh ~/create_git_pr.sh
