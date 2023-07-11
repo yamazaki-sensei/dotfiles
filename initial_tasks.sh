@@ -14,6 +14,6 @@ nodebrew install-binary latest
 curl -L http://get.oh-my.fish | fish
 omf install peco
 
-sudo echo '/usr/local/bin/fish' >> /etc/shells
-chsh -s /usr/local/bin/fish
+sudo echo '/opt/homebrew/bin/fish' >> /etc/shells
+chsh -s /opt/homebrew/bin/fish
 
