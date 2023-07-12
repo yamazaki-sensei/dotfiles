@@ -26,3 +26,5 @@ set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 if status is-interactive
     eval (/opt/homebrew/bin/brew shellenv) # <= これを追加
 end
+
+status --is-interactive; and rbenv init - fish | source
