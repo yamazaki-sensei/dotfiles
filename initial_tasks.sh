@@ -6,7 +6,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 brew install fish
 brew install git
-brew install hub
+brew install gh
 brew install rbenv
 brew install nodebrew
 brew install peco
