@@ -1,11 +1,10 @@
 [core]
-	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/vim
 [advice]
   detachedHead = false
 [user]
 	name = hira
-	email = almichest.free@gmail.com
+	email = ohno@lecto.co.jp
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

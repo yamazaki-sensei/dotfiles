@@ -18,3 +18,4 @@ rm -f ~/create_git_pr.sh
 ln -s ~/dotfiles/create_git_pr.sh ~/create_git_pr.sh
 rm -f ~/.git_template
 ln -s ~/dotfiles/.git_template ~/.git_template
+ln -s ~/dotfiles/.tigrc ~/.tigrc
