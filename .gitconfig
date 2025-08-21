@@ -12,6 +12,7 @@
 	process = git-lfs filter-process
 [alias]
 	p  = !git push -u origin `git rev-parse --abbrev-ref HEAD`
+	mo = !git fetch && git merge origin/`git rev-parse --abbrev-ref HEAD`
 	co = checkout
 	cm = commit
 	d  = diff
