@@ -8,10 +8,8 @@ brew install fish
 brew install git
 brew install gh
 brew install rbenv
-brew install nodebrew
 brew install peco
 brew install tig
-nodebrew install-binary latest
 curl -L http://get.oh-my.fish | fish
 omf install peco
 
