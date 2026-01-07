@@ -10,7 +10,7 @@ brew install gh
 brew install rbenv
 brew install peco
 brew install tig
-curl -L http://get.oh-my.fish | fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf install peco
 
 sudo echo '/opt/homebrew/bin/fish' >> /etc/shells
