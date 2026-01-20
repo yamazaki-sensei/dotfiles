@@ -13,6 +13,8 @@ brew install tig
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf install peco
 
+curl https://mise.run | sh
+
 sudo echo '/opt/homebrew/bin/fish' >> /etc/shells
 chsh -s /opt/homebrew/bin/fish
 
