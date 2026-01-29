@@ -9,7 +9,11 @@ set -g fish_mode_prompt top
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 
 function into
-  docker compose exec $argv[1] sh
+  if docker compose exec $argv[1] command -v bash > /dev/null 2>&1
+    docker compose exec $argv[1] bash
+  else
+    docker compose exec $argv[1] sh
+  end
 end
 
 # PATH
@@ -17,6 +21,15 @@ set PATH $HOME/.nodebrew/current/bin $PATH
 set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 set PATH $HOME/go/bin $PATH
 set PATH /Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home/bin $PATH
+# Aqua
+if set -q AQUA_ROOT_DIR
+    set -gx PATH $AQUA_ROOT_DIR/bin $PATH
+else if set -q XDG_DATA_HOME
+    set -gx PATH $XDG_DATA_HOME/aquaproj-aqua/bin $PATH
+else
+    set -gx PATH $HOME/.local/share/aquaproj-aqua/bin $PATH
+end
+set -gx AQUA_GLOBAL_CONFIG $HOME/.config/aquaproj-aqua/aqua.yaml
 set JAVA_HOME /Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home
 
 set -U fish_prompt_pwd_dir_length 0
@@ -45,3 +58,6 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 fish_add_path $VOLTA_HOME/bin
+
+direnv hook fish 2>/dev/null | source
+/Users/hiraku.578/.local/bin/mise activate fish | source
