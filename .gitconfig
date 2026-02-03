@@ -4,7 +4,7 @@
   detachedHead = false
 [user]
 	name = hira
-	email = ohno@lecto.co.jp
+	email = hiraku.578@studist.jp
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
