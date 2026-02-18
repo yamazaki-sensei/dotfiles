@@ -36,8 +36,14 @@ set -U fish_prompt_pwd_dir_length 0
 
 set -gx PKG_CONFIG_PATH "/usr/local/opt/libxml2/lib/pkgconfig"
 
+function fzf_select_history
+  history | fzf --query (commandline) | read -l selected
+  and commandline -r -- $selected
+  commandline -f repaint
+end
+
 function fish_user_key_bindings
-  bind \cr peco_select_history
+  bind \cr fzf_select_history
 end
 
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
@@ -47,9 +53,6 @@ if status is-interactive
 end
 
 status --is-interactive; and rbenv init - fish | source
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hira/google-cloud-sdk/path.fish.inc' ]; . '/Users/hira/google-cloud-sdk/path.fish.inc'; end
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
@@ -61,3 +64,6 @@ fish_add_path $VOLTA_HOME/bin
 
 direnv hook fish 2>/dev/null | source
 /Users/hiraku.578/.local/bin/mise activate fish | source
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hiraku.578/Downloads/temp/google-cloud-sdk/path.fish.inc' ]; . '/Users/hiraku.578/Downloads/temp/google-cloud-sdk/path.fish.inc'; end
