@@ -29,3 +29,5 @@
 	prune = true
 [credential]
 	helper = osxkeychain
+[ghq]
+	root = ~/Documents/git
