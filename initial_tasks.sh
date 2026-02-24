@@ -10,6 +10,7 @@ brew install gh
 brew install rbenv
 brew install tig
 brew install fzf
+brew install ghq
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 sudo echo '/opt/homebrew/bin/fish' >> /etc/shells
