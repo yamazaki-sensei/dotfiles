@@ -36,6 +36,19 @@ set -U fish_prompt_pwd_dir_length 0
 
 set -gx PKG_CONFIG_PATH "/usr/local/opt/libxml2/lib/pkgconfig"
 
+function repo
+  set -l selected
+  if set -q argv[1]
+    set selected (ghq list | fzf --query $argv[1])
+  else
+    set selected (ghq list | fzf --query (commandline -b))
+  end
+  if test -n "$selected"
+    cd (ghq root)/$selected
+  end
+  commandline -f repaint
+end
+
 function fzf_select_history
   history | fzf --query (commandline) | read -l selected
   and commandline -r -- $selected
@@ -44,6 +57,7 @@ end
 
 function fish_user_key_bindings
   bind \cr fzf_select_history
+  bind \cg repo
 end
 
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
