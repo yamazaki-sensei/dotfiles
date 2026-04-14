@@ -12,7 +12,7 @@
     tig
     fzf
     ghq
-    nodejs
+    nodejs_24
     direnv
     mise
   ];
