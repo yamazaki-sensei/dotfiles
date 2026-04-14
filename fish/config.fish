@@ -72,9 +72,6 @@ status --is-interactive; and rbenv init - fish | source
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# volta
-set -gx VOLTA_HOME "$HOME/.volta"
-fish_add_path $VOLTA_HOME/bin
 
 direnv hook fish 2>/dev/null | source
 /Users/hiraku.578/.local/bin/mise activate fish | source
