@@ -17,6 +17,7 @@ function into
 end
 
 # PATH
+set PATH /run/current-system/sw/bin $PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
 set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 set PATH $HOME/go/bin $PATH
