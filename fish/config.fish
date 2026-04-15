@@ -9,7 +9,7 @@ set -g fish_mode_prompt top
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 
 function into
-  if docker compose exec $argv[1] command -v bash > /dev/null 2>&1
+  if docker compose exec $argv[1] which bash > /dev/null 2>&1
     docker compose exec $argv[1] bash
   else
     docker compose exec $argv[1] sh
