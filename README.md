@@ -6,8 +6,9 @@ Nix (nix-darwin + home-manager) で macOS の環境構築を宣言的に管理�
 
 ```
 flake.nix    # エントリポイント（nix-darwin + home-manager を統合）
-darwin.nix   # macOS システム設定（fish の /etc/shells 登録など）
-home.nix     # ユーザー設定（パッケージ、dotfiles シンボリックリンク、fish 設定）
+darwin.nix   # macOS システム設定（fish の /etc/shells 登録、homebrew cask など）
+home.nix     # ユーザー設定（パッケージ、dotfiles シンボリックリンク、direnv / Karabiner）
+karabiner/   # Karabiner-Elements の設定（karabiner.json と complex_modifications）
 flake.lock   # 依存バージョンのロックファイル
 ```
 
@@ -75,6 +76,52 @@ home.file = {
 };
 ```
 
+`source = ./path` は nix store への read-only symlink になる。そのファイルを
+**アプリや自分自身が書き換える**場合（vim が `~/.vim/.netrwhist` を書くなど）は
+store に置けないので、working copy を指す out-of-store symlink にする。
+
+```nix
+".vim".source =
+  config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/dotfiles/.vim";
+```
+
+### fish
+
+fish の設定は home-manager 管理外。実体の `~/.config/fish/` が `dotfiles/fish/` から
+大きく乖離しており、リンクすると現用の設定が `.backup` に退避されて古い内容に
+置き換わってしまうため。`fish_variables` は fish 自身が実行時に書き込むファイルなので、
+store symlink にすると `set -U` が壊れる点にも注意。
+
+`dotfiles/fish/` を正本に戻すなら、まず実体を repo へ取り込んでから、
+`fish_variables` を除いて `xdg.configFile` に載せ直すこと。
+
+### direnv
+
+`programs.direnv` で入れる。`nix-direnv.enable = true` は必須で、外してはいけない
+（direnv 組み込みの `use_flake` はキャッシュを持たず、`cd` のたびに flake を再評価する）。
+シェル統合は `fish/config.fish` の `direnv hook fish` が担当している。
+
+### Karabiner-Elements
+
+アプリ本体は `darwin.nix` の `homebrew.casks` で入れる。DriverKit のシステム機能拡張を含むため、nixpkgs 版（`services.karabiner-elements`）ではなく公式 pkg を使っている。
+
+設定ファイルの扱いは 2 種類:
+
+| パス | 方式 | 理由 |
+|---|---|---|
+| `~/.config/karabiner/karabiner.json` | repo への out-of-store symlink | GUI がこのファイルを書き換えるため、read-only な nix store は指せない。GUI で設定を変えるとそのまま `git diff` に出る |
+| `~/.config/karabiner/assets/complex_modifications/` | store への symlink（`recursive = true`） | インポート済みルールは読み取り専用。ディレクトリ自体は実体なので GUI からの新規インポートも可能 |
+
+つまり **GUI で設定を変えたらそのまま commit すればよい**。逆に repo 側の `karabiner/karabiner.json` を直接編集した場合は、Karabiner が変更を検知して即座に反映する。
+
+新しいマシンでは `darwin-rebuild switch` の後、システム設定で以下の許可が必要:
+
+- 「プライバシーとセキュリティ」→ 入力監視 → Karabiner-Elements
+- 「一般」→ ログイン項目と機能拡張 → ドライバ機能拡張 → Karabiner-VirtualHIDDevice
+
+もし Karabiner が symlink を実ファイルで置き換えてしまう挙動を見せたら（`ls -l ~/.config/karabiner/karabiner.json` で確認）、`home.nix` の `mkOutOfStoreSymlink` をやめて `home.activation` でのコピー方式に切り替える。
+
 ### 依存を更新する
 
 ```bash
@@ -93,8 +140,9 @@ darwin-rebuild switch --flake ~/dotfiles
 | ファイル | 役割 |
 |---|---|
 | `flake.nix` | nixpkgs, nix-darwin, home-manager の入力定義とシステム構成 |
-| `darwin.nix` | macOS システムレベルの設定（fish シェル有効化、Nix 設定） |
-| `home.nix` | ユーザーレベルの設定（パッケージ、dotfiles リンク、fish 設定） |
+| `darwin.nix` | macOS システムレベルの設定（fish シェル有効化、Nix 設定、homebrew cask） |
+| `home.nix` | ユーザーレベルの設定（パッケージ、dotfiles リンク、direnv / Karabiner 設定） |
+| `karabiner/` | Karabiner-Elements の設定実体（`~/.config/karabiner` からリンクされる） |
 | `flake.lock` | 入力のバージョン固定（自動生成、コミットに含める） |
 
 ## 旧スクリプトとの対応
@@ -104,6 +152,7 @@ darwin-rebuild switch --flake ~/dotfiles
 | `install.sh`（シンボリックリンク作成） | `home.file` in `home.nix` |
 | `initial_tasks.sh`（brew install） | `home.packages` in `home.nix` |
 | `initial_tasks.sh`（chsh / /etc/shells） | `programs.fish.enable` in `darwin.nix` |
+| `initial_tasks.sh`（brew cask） | `homebrew.casks` in `darwin.nix` |
 
 ## トラブルシューティング
 

@@ -74,6 +74,10 @@ status --is-interactive; and rbenv init - fish | source
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 
+# nix devShell の評価は direnv の既定 5s に収まらないため、
+# 「is taking a while to execute」の警告閾値を上げる。
+set -gx DIRENV_WARN_TIMEOUT 20s
+
 direnv hook fish 2>/dev/null | source
 /Users/hiraku.578/.local/bin/mise activate fish | source
 

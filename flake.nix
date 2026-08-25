@@ -27,10 +27,15 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          # Existing unmanaged files (e.g. karabiner.json) are moved aside
+          # instead of aborting the activation.
+          home-manager.backupFileExtension = "backup";
           home-manager.users.${username} = import ./home.nix;
         }
         {
           users.users.${username}.home = "/Users/${username}";
+          # Used by homebrew / user-level activation scripts
+          system.primaryUser = username;
         }
       ];
     };
