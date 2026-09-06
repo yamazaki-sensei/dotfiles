@@ -24,6 +24,9 @@
   pr = "!git p; sh ~/create_git_pr.sh"
   prn = "!sh ~/create_git_pr.sh"
   del = "!git br | grep -v \"\\*\" | xargs git br -D"
+  # fish の open-worktree-branch と同じ実体。fish は home-manager 管理外で
+  # PATH も環境によって当てにならないので、シェル非依存な alias でも引けるようにする
+  owb = "!bash ~/dotfiles/open_worktree_branch.sh"
 
 [fetch]
 	prune = true

@@ -27,7 +27,16 @@ set -euo pipefail
 
 usage() {
   echo "usage: $(basename "$0") <branch> [--move-changes] [--remove]" >&2
+  echo "       $(basename "$0")            # worktree が掴んでいるブランチ一覧" >&2
   exit 2
+}
+
+# worktree が checkout 中のブランチ一覧（"<branch>\t<worktree path>" 形式）
+list_held_branches() {
+  git -C "$1" worktree list --porcelain | awk '
+    /^worktree / { path = substr($0, 10) }
+    /^branch /   { print substr($0, 19) "\t" path }
+  '
 }
 
 # SHA から現在の stash@{n} を引き直して drop する（他セッションの push で番号がずれるため）
@@ -49,16 +58,32 @@ for arg in "$@"; do
     -*) echo "unknown option: $arg" >&2; usage ;;
     *)
       [ -n "$BRANCH" ] && usage
-      BRANCH="$arg"
+      # `refs/heads/foo` で渡されても動くように prefix を落とす
+      BRANCH="${arg#refs/heads/}"
       ;;
   esac
 done
-[ -n "$BRANCH" ] || usage
 
 # メイン worktree のパス = 共通 .git ディレクトリの親。
 # worktree の中から実行されても正しくメインを指す。
 GIT_COMMON_DIR="$(git rev-parse --path-format=absolute --git-common-dir)"
 MAIN_ROOT="$(dirname "$GIT_COMMON_DIR")"
+
+# ブランチ名を覚えていなくても使えるよう、引数なしなら一覧を出して終わる
+if [ -z "$BRANCH" ]; then
+  echo "branches held by worktrees:"
+  echo
+  while IFS="$(printf '\t')" read -r branch path; do
+    if [ "$path" = "$MAIN_ROOT" ]; then
+      printf '  %-55s %s (main)\n' "$branch" "$path"
+    else
+      printf '  %-55s %s\n' "$branch" "$path"
+    fi
+  done < <(list_held_branches "$MAIN_ROOT")
+  echo
+  echo "open one in the main working directory: $(basename "$0") <branch>"
+  exit 0
+fi
 
 git -C "$MAIN_ROOT" show-ref --verify --quiet "refs/heads/$BRANCH" || {
   echo "error: branch '$BRANCH' does not exist" >&2
@@ -78,6 +103,16 @@ done < <(git -C "$MAIN_ROOT" worktree list --porcelain)
 if [ "$FOUND_WT" = "$MAIN_ROOT" ]; then
   echo "'$BRANCH' is already checked out in the main working directory: $MAIN_ROOT"
   exit 0
+fi
+
+# --remove は自分の足元を消しうるので、ブランチを動かす前に弾く。
+# 最後の worktree remove まで進んでから落ちると、ブランチだけ移動した中途半端な状態になる。
+if [ "$REMOVE_WORKTREE" -eq 1 ] && [ -n "$FOUND_WT" ] \
+  && [ "$FOUND_WT" = "$(git rev-parse --show-toplevel)" ]; then
+  echo "error: refusing to remove the worktree this command is running in: $FOUND_WT" >&2
+  echo "  run it from somewhere else, e.g.:" >&2
+  echo "    cd '$MAIN_ROOT' && $(basename "$0") $BRANCH --remove" >&2
+  exit 1
 fi
 
 STASH_SHA=""

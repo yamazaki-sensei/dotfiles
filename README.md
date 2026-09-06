@@ -135,6 +135,45 @@ nix flake update nixpkgs --flake ~/dotfiles
 darwin-rebuild switch --flake ~/dotfiles
 ```
 
+## コマンド
+
+### open-worktree-branch — worktree が掴んでいるブランチをメインで開く
+
+git は同じブランチを複数の worktree で同時に checkout できないので、Claude Code などが
+`.claude/worktrees/` に作った worktree のブランチをメインの作業ディレクトリで開こうとすると
+`fatal: '<branch>' is already used by worktree at ...` で失敗する。
+worktree 側を detached HEAD にしてブランチを解放してから、メインで checkout し直す。
+
+実体は `open_worktree_branch.sh`。3 通りの呼び方がある:
+
+```bash
+git owb <branch>                 # git alias（どのシェルからでも使える）
+open-worktree-branch <branch>    # fish 関数
+bash ~/dotfiles/open_worktree_branch.sh <branch>
+```
+
+fish は home-manager 管理外で、PATH も環境によって当てにならないので、
+シェル非依存な git alias を正とする。fish 関数は打ち慣れた名前のために残してある。
+
+| オプション | 挙動 |
+|---|---|
+| （なし） | worktree を detach するだけ。ディレクトリと未コミット変更はそのまま残る |
+| `--move-changes` | worktree の未コミット変更（未追跡含む）を stash 経由でメイン側へ移す |
+| `--remove` | ブランチ解放後に worktree 自体を削除する |
+
+引数なしで実行すると、worktree が掴んでいるブランチの一覧が出る。
+
+```bash
+git owb
+```
+
+未コミット変更がある worktree は、`--move-changes` を付けない限り中断する。
+stash スタックは worktree 間で共有されるため、一意なタグを付けて SHA で apply / drop している
+（他セッションのエントリを誤って pop しないよう、bare な `git stash pop` は使わない）。
+メインでの checkout に失敗した場合は worktree のブランチと stash を復元してから終了する。
+
+`--remove` は、実行しているシェルの足元の worktree を消そうとした場合は中断する。
+
 ## ファイルの役割
 
 | ファイル | 役割 |
@@ -143,6 +182,7 @@ darwin-rebuild switch --flake ~/dotfiles
 | `darwin.nix` | macOS システムレベルの設定（fish シェル有効化、Nix 設定、homebrew cask） |
 | `home.nix` | ユーザーレベルの設定（パッケージ、dotfiles リンク、direnv / Karabiner 設定） |
 | `karabiner/` | Karabiner-Elements の設定実体（`~/.config/karabiner` からリンクされる） |
+| `open_worktree_branch.sh` | worktree が掴んでいるブランチをメインで開く（`git owb` / `open-worktree-branch`） |
 | `flake.lock` | 入力のバージョン固定（自動生成、コミットに含める） |
 
 ## 旧スクリプトとの対応
